@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Concentretion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touches: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQU-aw-fTc">
+                                <rect key="frame" x="136.66666666666669" y="826" width="140.66666666666669" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="VEB-bY-c7B">
+                                <rect key="frame" x="20" y="193" width="374" height="198"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zqX-fA-bcF">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIT-GX-lVp">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="" buttonSize="large">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YTR-qi-sUY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Q7-r4-7eY">
+                                                <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vuu-ZG-flp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTH-lj-qkM">
+                                                <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vbk-eB-HoK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wY2-Ka-jkT">
+                                                <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cYM-eO-Oi8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tYI-qJ-KpY">
+                                        <rect key="frame" x="0.0" y="56" width="374" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C80-Fw-eSV">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="" buttonSize="large">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2DW-kY-hmg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fg6-wC-gNA">
+                                                <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qrJ-DB-FD1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cO-BU-hWm">
+                                                <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Drc-bW-v5P"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zu2-cH-X4f">
+                                                <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aal-Pn-JAs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HtC-aK-MnC">
+                                        <rect key="frame" x="0.0" y="112" width="374" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7P0-n2-ebh">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g6k-VA-SeL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xo2-rL-ooD">
+                                                <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LcS-Th-rvZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjr-uM-0n8">
+                                                <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="" buttonSize="large">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zfX-By-vaz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHU-68-jm7">
+                                                <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dIs-sS-RaJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="49u-Fv-MzH">
+                                        <rect key="frame" x="0.0" y="168" width="374" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lso-UQ-EF4">
+                                                <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NIa-ID-W3c"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqy-3n-zK2">
+                                                <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="" buttonSize="large">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3hb-7L-1ad"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdh-Z5-QqB">
+                                                <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nmt-e9-Qoz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iid-ZR-PMe">
+                                                <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="30"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="" buttonSize="large">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EIp-fn-V1C"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VEB-bY-c7B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3ah-UC-yIS"/>
+                            <constraint firstItem="gQU-aw-fTc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4g9-Ic-kLe"/>
+                            <constraint firstItem="VEB-bY-c7B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="149" id="btN-Tc-XE9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gQU-aw-fTc" secondAttribute="bottom" id="lFY-w9-Xkr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VEB-bY-c7B" secondAttribute="trailing" constant="20" id="zjQ-KN-hUB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="TouchesLabel" destination="gQU-aw-fTc" id="aa3-U0-Udl"/>
+                        <outletCollection property="ButtonCollection" destination="wY2-Ka-jkT" collectionClass="NSMutableArray" id="6fo-XR-ebf"/>
+                        <outletCollection property="ButtonCollection" destination="VTH-lj-qkM" collectionClass="NSMutableArray" id="sUj-r1-MWa"/>
+                        <outletCollection property="ButtonCollection" destination="6Q7-r4-7eY" collectionClass="NSMutableArray" id="scx-zx-5Hb"/>
+                        <outletCollection property="ButtonCollection" destination="mIT-GX-lVp" collectionClass="NSMutableArray" id="PZ0-Mk-cF2"/>
+                        <outletCollection property="ButtonCollection" destination="C80-Fw-eSV" collectionClass="NSMutableArray" id="04a-Kg-CaO"/>
+                        <outletCollection property="ButtonCollection" destination="fg6-wC-gNA" collectionClass="NSMutableArray" id="7NC-9x-4X2"/>
+                        <outletCollection property="ButtonCollection" destination="zu2-cH-X4f" collectionClass="NSMutableArray" id="SYR-04-Qfv"/>
+                        <outletCollection property="ButtonCollection" destination="4cO-BU-hWm" collectionClass="NSMutableArray" id="VbP-pj-xcc"/>
+                        <outletCollection property="ButtonCollection" destination="7P0-n2-ebh" collectionClass="NSMutableArray" id="ciJ-5s-mr8"/>
+                        <outletCollection property="ButtonCollection" destination="xo2-rL-ooD" collectionClass="NSMutableArray" id="mJn-c7-0t8"/>
+                        <outletCollection property="ButtonCollection" destination="YHU-68-jm7" collectionClass="NSMutableArray" id="LGg-ju-Nis"/>
+                        <outletCollection property="ButtonCollection" destination="vjr-uM-0n8" collectionClass="NSMutableArray" id="yC7-IT-j88"/>
+                        <outletCollection property="ButtonCollection" destination="kdh-Z5-QqB" collectionClass="NSMutableArray" id="CMB-nx-Ync"/>
+                        <outletCollection property="ButtonCollection" destination="Yqy-3n-zK2" collectionClass="NSMutableArray" id="qSl-0c-ZRq"/>
+                        <outletCollection property="ButtonCollection" destination="iid-ZR-PMe" collectionClass="NSMutableArray" id="HWu-Ye-a0g"/>
+                        <outletCollection property="ButtonCollection" destination="lso-UQ-EF4" collectionClass="NSMutableArray" id="p10-he-6n4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5.7971014492753632" y="-2.0089285714285712"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
