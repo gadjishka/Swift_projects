@@ -21,6 +21,8 @@ struct GameContinue:Codable{
     var playersCount: Int
     var playersNames: [String]
     var pointsForGame: [String]
+    var dealer: String?
+    var trump: String?
 }
 
 struct GameRecords:Codable{
@@ -31,7 +33,7 @@ class Game{
     
     static var shared = Game()
     
-    private let defaultSettings = GameContinue(statusGame: false, playersCount: 4, playersNames: ["Гаджи", "Тася", "Сергей", "Наташа"], pointsForGame: ["0", "0", "0", "0"])
+    private let defaultSettings = GameContinue(statusGame: false, playersCount: 4, playersNames: ["Гаджи", "Тася", "Сергей", "Наташа"], pointsForGame: ["0", "0", "0", "0"], dealer: "Гаджи", trump: "♠️")
     
     var currentSettings: GameContinue{
         get{

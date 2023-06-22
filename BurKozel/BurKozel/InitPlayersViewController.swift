@@ -46,7 +46,9 @@ class InitPlayersViewController: UIViewController {
             }
             i += 1
         }
+        Game.shared.currentSettings.dealer = Game.shared.currentSettings.playersNames[0]
         Game.shared.currentSettings.statusGame = true
+        Game.shared.currentSettings.trump = "♠️"
     }
     
     

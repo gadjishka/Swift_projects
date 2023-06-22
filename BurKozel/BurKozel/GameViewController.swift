@@ -10,19 +10,23 @@ import UIKit
 class GameViewController: UIViewController {
     
    
+    @IBOutlet weak var trumpLabel: UILabel!
+    
+    @IBOutlet weak var dealerLabel: UILabel!
+    
     @IBOutlet var playersName: [UILabel]!
     
-    @IBOutlet weak var winsName: UILabel!
-    
-    @IBOutlet weak var loserName: UILabel!
-    
-    @IBOutlet weak var newGameButton: UIButton!
     
     @IBOutlet var points: [UILabel]!
     
     @IBOutlet var setPoints: [UITextField]!
     
+    @IBOutlet weak var mainMuneButton: UIButton!
     var playerCount: Int = Settings.shared.currentSettings.players
+    
+    var trumps: [String] = ["♠️", "♣️", "♥️", "♦️"]
+    
+    var dealerNumber : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +36,6 @@ class GameViewController: UIViewController {
         
         updateGame()
         updatePlayersCount()
-        updateInfoGame()
         for i in 0...(playerCount-1){
             points[i].text = Game.shared.currentSettings.pointsForGame[i]
         }
@@ -40,9 +43,11 @@ class GameViewController: UIViewController {
     
     
     private func updateGame(){
+        trumpLabel.text = Game.shared.currentSettings.trump
         for i in 0...(playerCount-1){
             playersName[i].text = Game.shared.currentSettings.playersNames[i]
         }
+        dealerLabel.text = Game.shared.currentSettings.dealer
         for i in setPoints{
             i.keyboardType = .numberPad
         }
@@ -64,36 +69,23 @@ class GameViewController: UIViewController {
         }
     }
     
-    private func updateInfoGame(){
-        switch Game.shared.currentSettings.statusGame {
-        case true:
-            winsName.text = ""
-            loserName.text = ""
-            newGameButton.isHidden = true
-        case false:
-            winsName.text! += " winner"
-            loserName.text! += " loser"
-            newGameButton.isHidden = false
-        }
-    }
     
     private func exResult(){
         for i in 0...(playerCount-1){
             if Int(points[i].text!)! >= 31{
-                loserName.text = playersName[i].text
                 Game.shared.currentSettings.statusGame = false
                 break
             }
         }
-        if Game.shared.currentSettings.statusGame == false{
+        if Game.shared.currentSettings.statusGame == false {
             var winIndex = 0
             for i in 0...(playerCount-1){
                 if Int(points[i].text!)! < Int(points[winIndex].text!)!{
                     winIndex = i
                 }
             }
-            winsName.text = playersName[winIndex].text
             Game.records.recordsGame.recordsDict.updateValue(Int(points[winIndex].text!) ?? 0, forKey: playersName[winIndex].text!)
+            showAlertActionSheet(winner: playersName[winIndex].text!)
         }
     }
     
@@ -112,13 +104,12 @@ class GameViewController: UIViewController {
         }
     }
     
-    @IBAction func newGame(_ sender: Any) {
+    private func newGame() {
         for i in 0...(Game.shared.currentSettings.playersCount-1){
             points[i].text = "0"
             Game.shared.currentSettings.pointsForGame[i] = "0"
         }
         Game.shared.currentSettings.statusGame = true
-        updateInfoGame()
         setPoints[0].becomeFirstResponder()
         
     }
@@ -133,7 +124,60 @@ class GameViewController: UIViewController {
             Game.shared.currentSettings.pointsForGame[i] = points[i].text ?? "2"
         }
         exResult()
-        updateInfoGame()
+        chooseTrump()
+        chooseDealer()
+    }
+    
+    
+//    @IBAction func mainMenuAction() {
+//        if let viewControllers = self.navigationController?.viewControllers, viewControllers.count >= 3 {
+//            let targetViewController = viewControllers[viewControllers.count - 3]
+//            self.navigationController?.popToViewController(targetViewController, animated: true)
+//        }
+//    }
+    
+    private func chooseTrump(){
+        Game.shared.currentSettings.trump = trumps[Int(arc4random_uniform(4))]
+        trumpLabel.text = Game.shared.currentSettings.trump
+    }
+    private func chooseDealer(){
+        dealerNumber += 1
+        if dealerNumber == playerCount{
+            dealerNumber = 0
+        }
+        Game.shared.currentSettings.dealer = Game.shared.currentSettings.playersNames[dealerNumber]
+        dealerLabel.text = Game.shared.currentSettings.dealer
+        print(dealerNumber, Game.shared.currentSettings.dealer ?? "")
+    }
+    
+    private func showAlertActionSheet(winner: String){
+        let alert = UIAlertController(title: "Что вы хотите сделать?", message: "Победил \(winner)", preferredStyle: .actionSheet)
+        
+        let newGameAction = UIAlertAction(title: "Начать новую игру", style: .default) {[weak self](_) in
+            self?.newGame()
+        }
+        
+        let showRecord = UIAlertAction(title: "Посмотреть рекорды", style: .default) { [weak self](_) in
+            
+            self?.performSegue(withIdentifier: "recordFromGameVC", sender: nil)
+        }
+        
+        let menuAction = UIAlertAction(title: "Перейти в главное меню", style: .default) {[weak self] (_) in
+            if let viewControllers = self?.navigationController?.viewControllers, viewControllers.count >= 3 {
+                let targetViewController = viewControllers[viewControllers.count - 3]
+                self?.navigationController?.popToViewController(targetViewController, animated: true)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        
+        alert.addAction(newGameAction)
+        alert.addAction(showRecord)
+        alert.addAction(menuAction)
+        alert.addAction(cancelAction)
+        
+        
+        present(alert, animated: true)
     }
 }
 
