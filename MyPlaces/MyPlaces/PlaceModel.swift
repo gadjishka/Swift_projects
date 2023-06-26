@@ -6,8 +6,12 @@
 //
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import RealmSwift
 import UIKit
+=======
+import Foundation
+>>>>>>> parent of 2337033 (Add Realm Framework)
 =======
 import Foundation
 >>>>>>> parent of 2337033 (Add Realm Framework)
@@ -25,6 +29,9 @@ class Place: Object {
     var location: String
     var type: String
     var image: String
+<<<<<<< HEAD
+>>>>>>> parent of 2337033 (Add Realm Framework)
+=======
 >>>>>>> parent of 2337033 (Add Realm Framework)
     
     let restaurantNames = ["Траттория VABENE!", "ДжастаПаста", "Сабор де ла Вида Ресторан", "Любовь Пирогова", "АндерСон", "КТ Биро", "Джумбус", "Кафе Кусочки", "Боэми", "Стейк Хаус Бутчер"]
@@ -32,6 +39,7 @@ class Place: Object {
     func savePlaces() {
         
         for place in restaurantNames {
+<<<<<<< HEAD
 <<<<<<< HEAD
             
             let image = UIImage(named: place)
@@ -45,6 +53,9 @@ class Place: Object {
             newPlace.imageData = imageData
             
             StorageManager.saveObject(newPlace)
+=======
+            places.append(Place(name: place, location: "Москва", type: "Ресторан", image: place))
+>>>>>>> parent of 2337033 (Add Realm Framework)
 =======
             places.append(Place(name: place, location: "Москва", type: "Ресторан", image: place))
 >>>>>>> parent of 2337033 (Add Realm Framework)

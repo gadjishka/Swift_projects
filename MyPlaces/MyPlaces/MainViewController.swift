@@ -11,7 +11,11 @@ class MainViewController: UITableViewController {
 
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     //var places = Place.getPlaces()
+=======
+    let places = Place.getPlaces()
+>>>>>>> parent of 2337033 (Add Realm Framework)
 =======
     let places = Place.getPlaces()
 >>>>>>> parent of 2337033 (Add Realm Framework)
@@ -86,6 +90,7 @@ class MainViewController: UITableViewController {
     */
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue){
         guard let newPlaceVC = segue.source as? NewPlaceTableViewController else {return}
         
@@ -94,6 +99,9 @@ class MainViewController: UITableViewController {
         
         tableView.reloadData()
     }
+=======
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue){}
+>>>>>>> parent of 2337033 (Add Realm Framework)
 =======
     @IBAction func cancelAction(_ segue: UIStoryboardSegue){}
 >>>>>>> parent of 2337033 (Add Realm Framework)

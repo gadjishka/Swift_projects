@@ -9,6 +9,7 @@ import UIKit
 
 class NewPlaceTableViewController: UITableViewController {
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     var imageIsChange = false
     var newPlace = Place()
@@ -37,6 +38,12 @@ class NewPlaceTableViewController: UITableViewController {
         super.viewDidLoad()
 
 >>>>>>> parent of 2337033 (Add Realm Framework)
+=======
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+>>>>>>> parent of 2337033 (Add Realm Framework)
         tableView.tableFooterView = UIView()
     }
 
@@ -49,6 +56,7 @@ class NewPlaceTableViewController: UITableViewController {
             view.endEditing(true)
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     func saveNewPlace() {
@@ -73,6 +81,9 @@ class NewPlaceTableViewController: UITableViewController {
         dismiss(animated: true)
     }
     
+=======
+
+>>>>>>> parent of 2337033 (Add Realm Framework)
 =======
 
 >>>>>>> parent of 2337033 (Add Realm Framework)
