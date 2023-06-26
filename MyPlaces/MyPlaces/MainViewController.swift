@@ -10,7 +10,11 @@ import UIKit
 class MainViewController: UITableViewController {
 
     
+<<<<<<< HEAD
     //var places = Place.getPlaces()
+=======
+    let places = Place.getPlaces()
+>>>>>>> parent of 2337033 (Add Realm Framework)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,7 @@ class MainViewController: UITableViewController {
 //    }
 
     
+<<<<<<< HEAD
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 //
@@ -47,6 +52,21 @@ class MainViewController: UITableViewController {
 //
 //        return cell
 //    }
+=======
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        
+        cell.nameLabel.text = places[indexPath.row].name
+        cell.locationLabel.text = places[indexPath.row].location
+        cell.typeLabel.text = places[indexPath.row].type
+        
+        cell.imageOfPlace.image = UIImage(named: places[indexPath.row].image)
+        cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
+        cell.imageOfPlace.clipsToBounds = true
+        
+        return cell
+    }
+>>>>>>> parent of 2337033 (Add Realm Framework)
     
      //MARK: Table View delegate
     
@@ -65,6 +85,7 @@ class MainViewController: UITableViewController {
     }
     */
     
+<<<<<<< HEAD
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue){
         guard let newPlaceVC = segue.source as? NewPlaceTableViewController else {return}
         
@@ -73,5 +94,8 @@ class MainViewController: UITableViewController {
         
         tableView.reloadData()
     }
+=======
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue){}
+>>>>>>> parent of 2337033 (Add Realm Framework)
 
 }
