@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		246692C984C417BC45291FD9 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D27EF2744490C7A66BB497 /* Pods_MyPlaces.framework */; };
+		32EDCCDF2A4992820062389A /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EDCCDE2A4992820062389A /* StorageManager.swift */; };
 		A82E5BE521A5315800BD5158 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82E5BE421A5315800BD5158 /* NewPlaceViewController.swift */; };
 		A895AEC921934CA7006ACC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895AEC821934CA7006ACC1B /* AppDelegate.swift */; };
 		A895AECE21934CA7006ACC1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A895AECC21934CA7006ACC1B /* Main.storyboard */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3274F8192A4995A30019638A /* MyPlaces.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyPlaces.entitlements; sourceTree = "<group>"; };
+		32EDCCDE2A4992820062389A /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		3E5EDC805BEC1B7571850577 /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		79D27EF2744490C7A66BB497 /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		854DDE450144C46A2BF6BB78 /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,10 +70,12 @@
 		A895AEC721934CA7006ACC1B /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				3274F8192A4995A30019638A /* MyPlaces.entitlements */,
 				A895AEC821934CA7006ACC1B /* AppDelegate.swift */,
 				A895AEDA21934D16006ACC1B /* MainViewController.swift */,
 				A82E5BE421A5315800BD5158 /* NewPlaceViewController.swift */,
 				A8DB6864219DA4BE00CD36D5 /* PlaceModel.swift */,
+				32EDCCDE2A4992820062389A /* StorageManager.swift */,
 				A8DB681F219BDB0700CD36D5 /* CustomTableViewCell.swift */,
 				A895AECC21934CA7006ACC1B /* Main.storyboard */,
 				A895AECF21934CA8006ACC1B /* Assets.xcassets */,
@@ -86,7 +91,6 @@
 				854DDE450144C46A2BF6BB78 /* Pods-MyPlaces.debug.xcconfig */,
 				3E5EDC805BEC1B7571850577 /* Pods-MyPlaces.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -126,8 +130,9 @@
 		A895AEBD21934CA7006ACC1B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Alexey Efimov";
 				TargetAttributes = {
 					A895AEC421934CA7006ACC1B = {
@@ -217,6 +222,7 @@
 				A8DB6820219BDB0700CD36D5 /* CustomTableViewCell.swift in Sources */,
 				A8DB6865219DA4BE00CD36D5 /* PlaceModel.swift in Sources */,
 				A82E5BE521A5315800BD5158 /* NewPlaceViewController.swift in Sources */,
+				32EDCCDF2A4992820062389A /* StorageManager.swift in Sources */,
 				A895AEC921934CA7006ACC1B /* AppDelegate.swift in Sources */,
 				A895AEDB21934D16006ACC1B /* MainViewController.swift in Sources */,
 			);
@@ -270,6 +276,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -331,6 +338,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -365,15 +373,19 @@
 			baseConfigurationReference = 854DDE450144C46A2BF6BB78 /* Pods-MyPlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MyPlaces/MyPlaces.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5H969S6YFE;
+				DEVELOPMENT_TEAM = Q7HLS9L7NM;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.swiftbook.MyPlaces;
+				PRODUCT_BUNDLE_IDENTIFIER = gadji.MyPlaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -384,15 +396,19 @@
 			baseConfigurationReference = 3E5EDC805BEC1B7571850577 /* Pods-MyPlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MyPlaces/MyPlaces.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5H969S6YFE;
+				DEVELOPMENT_TEAM = Q7HLS9L7NM;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.swiftbook.MyPlaces;
+				PRODUCT_BUNDLE_IDENTIFIER = gadji.MyPlaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
