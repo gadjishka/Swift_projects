@@ -11,7 +11,7 @@ import UIKit
 class NewPlaceTableViewController: UITableViewController {
     
     var imageIsChange = false
-    var newPlace: Place?
+    var newPlace = Place()
     
     @IBOutlet var placeImage: UIImageView!
     
@@ -27,6 +27,9 @@ class NewPlaceTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
+            self.newPlace.savePlaces()
+        }
         
         tableView.tableFooterView = UIView()
         
@@ -82,11 +85,11 @@ class NewPlaceTableViewController: UITableViewController {
             image = #imageLiteral(resourceName: "imagePlaceholder")
         }
         
-        newPlace = Place(name: placeName.text!,
-                         location: placeLocation.text,
-                         type: placeType.text,
-                         image: image,
-                         restaurauntImage: nil)
+//        newPlace = Place(name: placeName.text!,
+//                         location: placeLocation.text,
+//                         type: placeType.text,
+//                         image: image,
+//                         restaurauntImage: nil)
         
     }
     
