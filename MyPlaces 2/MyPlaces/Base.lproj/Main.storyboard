@@ -98,7 +98,7 @@
                         <constraints>
                             <constraint firstItem="5lH-Qd-8k7" firstAttribute="top" secondItem="LdK-He-T5Z" secondAttribute="top" id="26c-P6-NKs"/>
                             <constraint firstItem="5dN-WZ-Yji" firstAttribute="leading" secondItem="LdK-He-T5Z" secondAttribute="leading" id="6N8-zG-Lag"/>
-                            <constraint firstAttribute="bottom" secondItem="5dN-WZ-Yji" secondAttribute="bottom" id="Hqg-4W-DDv"/>
+                            <constraint firstItem="5dN-WZ-Yji" firstAttribute="bottom" secondItem="86e-03-vF4" secondAttribute="bottom" id="Hqg-4W-DDv"/>
                             <constraint firstItem="LdK-He-T5Z" firstAttribute="trailing" secondItem="5lH-Qd-8k7" secondAttribute="trailing" id="Sh8-iK-UcL"/>
                             <constraint firstItem="5lH-Qd-8k7" firstAttribute="leading" secondItem="LdK-He-T5Z" secondAttribute="leading" id="ffL-fn-xQf"/>
                             <constraint firstItem="5dN-WZ-Yji" firstAttribute="top" secondItem="5lH-Qd-8k7" secondAttribute="bottom" constant="1" id="y9S-05-oaF"/>
@@ -264,6 +264,23 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="6Jd-zO-o2S">
+                                        <rect key="frame" x="0.0" y="525" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Jd-zO-o2S" id="tGV-EG-6Zt">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ml4-bW-fnG" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                    <rect key="frame" x="81" y="48" width="252" height="44"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ml4-bW-fnG" firstAttribute="centerX" secondItem="tGV-EG-6Zt" secondAttribute="centerX" id="YQ9-9n-tXS"/>
+                                                <constraint firstItem="Ml4-bW-fnG" firstAttribute="centerY" secondItem="tGV-EG-6Zt" secondAttribute="centerY" id="f09-g6-AIW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -295,7 +312,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLv-3y-jaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ijf-wN-1rB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1325" y="7"/>
+            <point key="canvasLocation" x="1324.6376811594205" y="6.6964285714285712"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3KM-Cz-T7c">
@@ -336,6 +353,11 @@
             <point key="canvasLocation" x="1326" y="-725"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Ml4-bW-fnG">
+            <size key="intrinsicContentSize" width="252" height="44"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="fbh-wC-Twp"/>
     </inferredMetricsTieBreakers>
