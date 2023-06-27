@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		323D304D2A49E333008BD314 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323D304C2A49E333008BD314 /* RatingControl.swift */; };
+		329095712A4B1D7700E605D5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329095702A4B1D7700E605D5 /* MapViewController.swift */; };
 		32EDCCDF2A4992820062389A /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EDCCDE2A4992820062389A /* StorageManager.swift */; };
 		32FB8F3E2A4B017800AAF34C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 32FB8F3D2A4B017800AAF34C /* Realm */; };
 		32FB8F402A4B017800AAF34C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 32FB8F3F2A4B017800AAF34C /* RealmSwift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		323D304C2A49E333008BD314 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		3274F8192A4995A30019638A /* MyPlaces.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyPlaces.entitlements; sourceTree = "<group>"; };
+		329095702A4B1D7700E605D5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		32EDCCDE2A4992820062389A /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		A82E5BE421A5315800BD5158 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		A895AEC521934CA7006ACC1B /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 				A8DB6864219DA4BE00CD36D5 /* PlaceModel.swift */,
 				32EDCCDE2A4992820062389A /* StorageManager.swift */,
 				A8DB681F219BDB0700CD36D5 /* CustomTableViewCell.swift */,
+				329095702A4B1D7700E605D5 /* MapViewController.swift */,
 				323D304C2A49E333008BD314 /* RatingControl.swift */,
 				A895AECC21934CA7006ACC1B /* Main.storyboard */,
 				A895AECF21934CA8006ACC1B /* Assets.xcassets */,
@@ -176,6 +179,7 @@
 				32EDCCDF2A4992820062389A /* StorageManager.swift in Sources */,
 				A895AEC921934CA7006ACC1B /* AppDelegate.swift in Sources */,
 				A895AEDB21934D16006ACC1B /* MainViewController.swift in Sources */,
+				329095712A4B1D7700E605D5 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
