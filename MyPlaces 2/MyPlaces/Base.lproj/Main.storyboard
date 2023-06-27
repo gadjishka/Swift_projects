@@ -36,39 +36,59 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="TJq-Ud-cGD">
-                                                    <rect key="frame" x="96" y="8" width="302" height="69"/>
+                                                    <rect key="frame" x="96" y="8" width="208" height="69"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COl-Oj-oTE">
-                                                            <rect key="frame" x="0.0" y="0.0" width="302" height="24.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="208" height="24.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lacation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0md-JZ-aTp">
-                                                            <rect key="frame" x="0.0" y="27.5" width="302" height="20"/>
+                                                            <rect key="frame" x="0.0" y="27.5" width="208" height="20"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xi-Wl-Qoq">
-                                                            <rect key="frame" x="0.0" y="50.5" width="302" height="18.5"/>
+                                                            <rect key="frame" x="0.0" y="50.5" width="208" height="18.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="90" placeholderIntrinsicHeight="14" translatesAutoresizingMaskIntoConstraints="NO" id="2iq-tA-hiD" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="312" y="35.5" width="90" height="14"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="Ntd-2o-wot"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="14"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="filledStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="TJq-Ud-cGD" firstAttribute="leading" secondItem="uzb-MG-a2h" secondAttribute="trailing" constant="16" id="4qQ-ao-em7"/>
                                                 <constraint firstItem="TJq-Ud-cGD" firstAttribute="top" secondItem="VT4-T5-AxQ" secondAttribute="top" constant="8" id="AAI-qw-UJR"/>
                                                 <constraint firstAttribute="bottom" secondItem="TJq-Ud-cGD" secondAttribute="bottom" constant="8" id="FTx-Ee-NMS"/>
+                                                <constraint firstItem="2iq-tA-hiD" firstAttribute="centerY" secondItem="VT4-T5-AxQ" secondAttribute="centerY" id="Gei-Fd-2Jm"/>
                                                 <constraint firstItem="uzb-MG-a2h" firstAttribute="leading" secondItem="VT4-T5-AxQ" secondAttribute="leading" constant="15" id="Jij-yx-BsA"/>
                                                 <constraint firstItem="uzb-MG-a2h" firstAttribute="centerY" secondItem="VT4-T5-AxQ" secondAttribute="centerY" id="MbY-t4-dcf"/>
-                                                <constraint firstAttribute="trailing" secondItem="TJq-Ud-cGD" secondAttribute="trailing" constant="16" id="RV7-EM-VRD"/>
+                                                <constraint firstItem="2iq-tA-hiD" firstAttribute="leading" secondItem="TJq-Ud-cGD" secondAttribute="trailing" constant="8" id="OSn-6h-ZJq"/>
+                                                <constraint firstItem="2iq-tA-hiD" firstAttribute="trailing" secondItem="VT4-T5-AxQ" secondAttribute="trailingMargin" constant="8" id="flK-3Z-FCk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cosmosView" destination="2iq-tA-hiD" id="ybj-Jx-fwf"/>
                                             <outlet property="imageOfPlace" destination="uzb-MG-a2h" id="1vw-rA-vte"/>
                                             <outlet property="locationLabel" destination="0md-JZ-aTp" id="3Mh-Dr-Va7"/>
                                             <outlet property="nameLabel" destination="COl-Oj-oTE" id="EbJ-KX-q1e"/>
@@ -306,6 +326,7 @@
                         <outlet property="placeLocation" destination="4ck-sG-1zk" id="2o8-Ix-AZk"/>
                         <outlet property="placeName" destination="IWb-HE-Q0N" id="bOH-BF-ZHk"/>
                         <outlet property="placeType" destination="03B-gn-Ygo" id="VNJ-yn-vw4"/>
+                        <outlet property="ratingControl" destination="Ml4-bW-fnG" id="lFz-dV-Vwi"/>
                         <outlet property="saveButton" destination="TVh-pN-ADt" id="IHa-ci-zsl"/>
                     </connections>
                 </tableViewController>
@@ -354,6 +375,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="2iq-tA-hiD">
+            <size key="intrinsicContentSize" width="90" height="14"/>
+        </designable>
         <designable name="Ml4-bW-fnG">
             <size key="intrinsicContentSize" width="252" height="44"/>
         </designable>
@@ -364,6 +388,8 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="emptyStar" width="255" height="256"/>
+        <image name="filledStar" width="237.5" height="238"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
