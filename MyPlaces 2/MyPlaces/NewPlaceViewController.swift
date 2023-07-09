@@ -19,8 +19,8 @@ class NewPlaceViewController: UITableViewController {
     @IBOutlet var placeName: UITextField!
     @IBOutlet var placeLocation: UITextField!
     @IBOutlet var placeType: UITextField!
-    
     @IBOutlet var ratingControl: RatingControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,22 +71,33 @@ class NewPlaceViewController: UITableViewController {
         }
     }
     
-    //MARK: Navigation
+    // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showMap" { return }
-        let mapVC = segue.destination as! MapViewController
-        mapVC.place.name = placeName.text!
-        mapVC.place.location = placeLocation.text!
-        mapVC.place.type = placeType.text!
-        mapVC.place.imageData = placeImage.image?.pngData()
+        
+        
+        guard let identifier = segue.identifier, let mapVC = segue.destination as? MapViewController else { return}
+
+        
+        mapVC.incomeSegueIdentifier = identifier
+        
+        mapVC.mapViewControllerDelegete = self
+        
+        if identifier == "showPlace" {
+            mapVC.place.name = placeName.text!
+            mapVC.place.location = placeLocation.text
+            mapVC.place.type = placeType.text
+            mapVC.place.imageData = placeImage.image?.pngData()
+        }
+        
+        
     }
     
     func savePlace() {
         
         let image = imageIsChanged ? placeImage.image : #imageLiteral(resourceName: "imagePlaceholder")
         let imageData = image?.pngData()
-
+        
         let newPlace = Place(name: placeName.text!,
                              location: placeLocation.text,
                              type: placeType.text,
@@ -104,15 +115,15 @@ class NewPlaceViewController: UITableViewController {
         } else {
             StorageManager.saveObject(newPlace)
         }
-        
     }
     
     private func setupEditScreen() {
-        
         if currentPlace != nil {
+            
             setupNavigationBar()
             imageIsChanged = true
-            guard let data = currentPlace?.imageData, let image = UIImage(data: data) else {return}
+            
+            guard let data = currentPlace?.imageData, let image = UIImage(data: data) else { return }
             
             placeImage.image = image
             placeImage.contentMode = .scaleAspectFill
@@ -123,9 +134,6 @@ class NewPlaceViewController: UITableViewController {
         }
     }
     
-    
-    
-    
     private func setupNavigationBar() {
         if let topItem = navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -134,7 +142,7 @@ class NewPlaceViewController: UITableViewController {
         title = currentPlace?.name
         saveButton.isEnabled = true
     }
-    
+
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true)
     }
@@ -186,4 +194,13 @@ extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationC
         
         dismiss(animated: true)
     }
+}
+
+extension NewPlaceViewController: MapViewControllerDelegete {
+    
+    func getAddress(_ address: String?) {
+        placeLocation.text = address
+    }
+    
+    
 }
